@@ -2,7 +2,15 @@ const jwt = require("jwt-simple");
 const dayjs = require("dayjs");
 
 const secret = require("../config/global.config");
-// .add(1, "days")
+
+/**
+ * 
+ * @param {*} user this is the current user
+ * @param {*} id_database this is the database that we're going to use
+ * 
+ * In this function we create the token that is goint to be used everywhere
+ * in the application
+ */
 exports.createToken = function(user, id_database) {
   var payload = {
     id_database,

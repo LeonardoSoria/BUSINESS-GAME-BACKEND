@@ -2,6 +2,13 @@ const { Pool } = require("pg");
 const hash = require("object-hash");
 const jwToken = require("../../../service/jwt.service");
 
+/**
+ * 
+ * @param {*} req This param is the request
+ * @param {*} res This param is the response
+ * This functions calls the instance of the database and send the data to an storage precedure that register 
+ * a new user
+ */
 async function usr_001_register(req, res) {
   try {
     const database = new Pool(req.database);
@@ -34,6 +41,13 @@ async function usr_001_register(req, res) {
   }
 }
 
+/**
+ * 
+ * @param {*} req This param is the request
+ * @param {*} res This param is the response
+ * This functions calls the instance of the database and send the data to an storage precedure that login 
+ * an existing user
+ */
 async function usr_001_login(req, res) {
   try {
     const database = new Pool(req.database);
@@ -67,6 +81,13 @@ async function usr_001_login(req, res) {
   }
 }
 
+/**
+ * 
+ * @param {*} req This param is the request
+ * @param {*} res This param is the response
+ * This functions calls the instance of the database and send the data to an storage precedure that logout the 
+ * user from the application
+ */
 async function usr_001_logout(req, res) {
   try {
     const database = new Pool(req.database);

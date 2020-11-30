@@ -4,6 +4,14 @@ const jwt = require("jwt-simple");
 
 const secret = require("../config/global.config");
 
+/**
+ * 
+ * @param {*} req This param is the request 
+ * @param {*} res This param is the respones
+ * @param {*} next This param is the pass to the next step
+ * 
+ * In this functions we validate the jwt received from the front end
+ */
 exports.ensureAuth = function(req, res, next) {
   if (!req.headers.authorization) {
     return res.status(403).send({

@@ -5,6 +5,9 @@ const mdAuth = require("../../../middleware/authentication.middleware")
 const AUTH_001_MD = require("../../../middleware/AUTH_000/AUTH_001/auth_001_md");
 const AUTH_001_CTRL = require("../../../controller/AUTH_000/AUTH_001/auth_001_ctrl");
 
+/**
+ * These are the endpoints that have routes, middlewares and controllers
+ */
 router.post("/register", [AUTH_001_MD.user_001_registerM], AUTH_001_CTRL.usr_001_register);
 
 router.post("/login", [AUTH_001_MD.user_001_loginM], AUTH_001_CTRL.usr_001_login);

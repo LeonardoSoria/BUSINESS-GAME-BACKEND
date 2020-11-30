@@ -1,5 +1,13 @@
 const globalDB = require("../../../config/database.config");
 
+/**
+ * 
+ * @param {*} req This param is the request 
+ * @param {*} res This param is the respones
+ * @param {*} next This param is the pass to the next step
+ * 
+ * In this functions we validate the data from the frontend
+ */
 exports.user_001_registerM = function (req, res, next) {
     let { userLogin, password, email } = req.body;
         if (userLogin) {
@@ -40,6 +48,14 @@ exports.user_001_registerM = function (req, res, next) {
         }
 }
 
+/**
+ * 
+ * @param {*} req This param is the request 
+ * @param {*} res This param is the respones
+ * @param {*} next This param is the pass to the next step
+ * 
+ * In this functions we validate the data from the frontend
+ */
 exports.user_001_loginM = function (req, res, next) {
     let { userLogin, password } = req.body;
         if (userLogin) {
