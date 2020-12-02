@@ -18,7 +18,7 @@ async function usr_001_register(req, res) {
     const results = await database.query(query, [userLogin, email, encryptPass]);
     await database.end();
 
-    if (results.rows[0].ok) { 
+    if (results.rows[0].ok) {
       let data = results.rows[0];
       res.status(200).json({
         ok: true,
