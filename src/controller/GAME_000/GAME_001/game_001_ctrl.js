@@ -6,6 +6,7 @@ const { Pool } = require("pg");
  * @param {*} res This param is the response
  * This functions calls the instance of the database and send the data to an storage precedure that get the questions
  * of an especific user
+ * 
  */
 async function game_001_getQuestions(req, res) {
     try {
