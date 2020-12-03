@@ -13,9 +13,9 @@ async function usr_001_register(req, res) {
   try {
     const database = new Pool(req.database);
     let { userLogin, password, email } = req.body;
-    const encryptPass = hash.sha1(password);
+    // const encryptPass = hash.sha1(password);
     const query = "select * from public.auth_001_register($1,$2,$3);";
-    const results = await database.query(query, [userLogin, email, encryptPass]);
+    const results = await database.query(query, [userLogin, email, password]);
     await database.end();
 
     if (results.rows[0].ok) {
@@ -52,9 +52,9 @@ async function usr_001_login(req, res) {
   try {
     const database = new Pool(req.database);
     let { userLogin, password } = req.body;
-    const encryptPass = hash.sha1(password);
+    // const encryptPass = hash.sha1(password);
     const query = "select * from public.auth_001_login($1,$2);";
-    const results = await database.query(query, [userLogin, encryptPass]);
+    const results = await database.query(query, [userLogin, password]);
     await database.end();
 
     if (results.rows[0].ok) {
